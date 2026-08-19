@@ -200,6 +200,7 @@
                 <button
                     class="search-button"
                     id="searchButton"
+                    type="button"
                 >
                     🔍 Search Properties
                 </button>
@@ -233,7 +234,6 @@
 
 
         <div class="features-grid">
-
 
             <div class="feature-card">
 
@@ -322,7 +322,6 @@
             id="propertyGrid"
         >
 
-
             <!-- PROPERTY 1 -->
             <div
                 class="property-card"
@@ -375,8 +374,9 @@
 
                     </div>
 
+
                     <a
-                        href="#contact"
+                        href="property.html?id=luxury"
                         class="property-button"
                     >
                         View Property
@@ -439,8 +439,9 @@
 
                     </div>
 
+
                     <a
-                        href="#contact"
+                        href="property.html?id=family"
                         class="property-button"
                     >
                         View Property
@@ -503,8 +504,9 @@
 
                     </div>
 
+
                     <a
-                        href="#contact"
+                        href="property.html?id=villa"
                         class="property-button"
                     >
                         View Property
@@ -700,7 +702,11 @@
             <!-- CONTACT FORM -->
             <div class="contact-form-wrapper">
 
-                <form id="contactForm">
+                <form
+                    id="contactForm"
+                    action="https://formspree.io/f/mwlealjl"
+                    method="POST"
+                >
 
                     <div class="form-row">
 
@@ -713,6 +719,7 @@
                             <input
                                 type="text"
                                 id="name"
+                                name="name"
                                 placeholder="Your name"
                                 required
                             >
@@ -729,6 +736,7 @@
                             <input
                                 type="email"
                                 id="email"
+                                name="email"
                                 placeholder="you@example.com"
                                 required
                             >
@@ -747,12 +755,31 @@
                         <input
                             type="tel"
                             id="phone"
+                            name="phone"
                             placeholder="+1 (555) 000-0000"
                         >
 
                     </div>
 
 
+                    <!-- PROPERTY -->
+                    <div class="form-group">
+
+                        <label for="propertyInterest">
+                            Property
+                        </label>
+
+                        <input
+                            type="text"
+                            id="propertyInterest"
+                            name="propertyInterest"
+                            placeholder="Which property are you interested in?"
+                        >
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
                     <div class="form-group">
 
                         <label for="message">
@@ -761,6 +788,7 @@
 
                         <textarea
                             id="message"
+                            name="message"
                             rows="6"
                             placeholder="Tell us what you're looking for..."
                             required
@@ -817,7 +845,9 @@
                     Company
                 </h4>
 
-                <a href="#home">Home</a>
+                <a href="#home">
+                    Home
+                </a>
 
                 <a href="#properties">
                     Properties
@@ -865,15 +895,15 @@
                     Contact
                 </h4>
 
-                <a href="#">
+                <a href="#contact">
                     hello@primenestrealty.com
                 </a>
 
-                <a href="#">
+                <a href="#contact">
                     +1 (555) 123-4567
                 </a>
 
-                <a href="#">
+                <a href="#contact">
                     New York, NY
                 </a>
 
@@ -901,7 +931,49 @@
     </footer>
 
 
+    <!-- EXISTING JAVASCRIPT -->
     <script src="script.js"></script>
+
+
+    <!-- PROPERTY AUTO-FILL -->
+    <script>
+
+        const viewingParams =
+            new URLSearchParams(window.location.search);
+
+        const selectedProperty =
+            viewingParams.get("property");
+
+        const propertyNames = {
+
+            luxury:
+                "Modern Luxury Residence",
+
+            family:
+                "Contemporary Family Home",
+
+            villa:
+                "Elegant Hillside Villa"
+
+        };
+
+
+        const propertyField =
+            document.getElementById("propertyInterest");
+
+
+        if (
+            propertyField &&
+            selectedProperty &&
+            propertyNames[selectedProperty]
+        ) {
+
+            propertyField.value =
+                propertyNames[selectedProperty];
+
+        }
+
+    </script>
 
 </body>
 

@@ -2,7 +2,8 @@
 // PROPERTY SEARCH
 // =========================
 
-const searchButton = document.getElementById("searchButton");
+const searchButton =
+    document.getElementById("searchButton");
 
 const locationSelect =
     document.getElementById("location");
@@ -20,77 +21,90 @@ const noResults =
     document.getElementById("noResults");
 
 
-searchButton.addEventListener("click", function () {
+if (
+    searchButton &&
+    locationSelect &&
+    propertyTypeSelect &&
+    priceSelect
+) {
 
-    const selectedLocation =
-        locationSelect.value;
+    searchButton.addEventListener("click", function () {
 
-    const selectedType =
-        propertyTypeSelect.value;
+        const selectedLocation =
+            locationSelect.value;
 
-    const selectedPrice =
-        priceSelect.value;
+        const selectedType =
+            propertyTypeSelect.value;
 
-    let visibleProperties = 0;
+        const selectedPrice =
+            priceSelect.value;
 
-
-    propertyCards.forEach(function (card) {
-
-        const cardLocation =
-            card.dataset.location;
-
-        const cardType =
-            card.dataset.type;
-
-        const cardPrice =
-            Number(card.dataset.price);
+        let visibleProperties = 0;
 
 
-        const locationMatches =
-            selectedLocation === "all" ||
-            selectedLocation === cardLocation;
+        propertyCards.forEach(function (card) {
+
+            const cardLocation =
+                card.dataset.location;
+
+            const cardType =
+                card.dataset.type;
+
+            const cardPrice =
+                Number(card.dataset.price);
 
 
-        const typeMatches =
-            selectedType === "all" ||
-            selectedType === cardType;
+            const locationMatches =
+                selectedLocation === "all" ||
+                selectedLocation === cardLocation;
 
 
-        const priceMatches =
-            selectedPrice === "all" ||
-            cardPrice >= Number(selectedPrice);
+            const typeMatches =
+                selectedType === "all" ||
+                selectedType === cardType;
 
 
-        if (
-            locationMatches &&
-            typeMatches &&
-            priceMatches
-        ) {
+            const priceMatches =
+                selectedPrice === "all" ||
+                cardPrice >= Number(selectedPrice);
 
-            card.style.display = "block";
 
-            visibleProperties++;
+            if (
+                locationMatches &&
+                typeMatches &&
+                priceMatches
+            ) {
 
-        } else {
+                card.style.display = "block";
 
-            card.style.display = "none";
+                visibleProperties++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        if (noResults) {
+
+            if (visibleProperties === 0) {
+
+                noResults.style.display = "block";
+
+            } else {
+
+                noResults.style.display = "none";
+
+            }
 
         }
 
     });
 
-
-    if (visibleProperties === 0) {
-
-        noResults.style.display = "block";
-
-    } else {
-
-        noResults.style.display = "none";
-
-    }
-
-});
+}
 
 
 // =========================
@@ -104,21 +118,41 @@ const formMessage =
     document.getElementById("formMessage");
 
 
-contactForm.addEventListener("submit", function (event) {
+if (contactForm) {
 
-    event.preventDefault();
+    contactForm.addEventListener("submit", function () {
 
-    const name =
-        document.getElementById("name").value.trim();
+        const nameField =
+            document.getElementById("name");
 
-    formMessage.textContent =
-        `Thank you, ${name}! Your message has been received. We'll get back to you shortly.`;
+        const name =
+            nameField
+                ? nameField.value.trim()
+                : "";
 
-    formMessage.style.display = "block";
 
-    contactForm.reset();
+        if (formMessage && name) {
 
-});
+            formMessage.textContent =
+                `Thank you, ${name}! Your message is being sent.`;
+
+            formMessage.style.display =
+                "block";
+
+        }
+
+        /*
+         IMPORTANT:
+         There is NO event.preventDefault()
+         here.
+
+         This allows the form to continue
+         submitting to Formspree.
+        */
+
+    });
+
+}
 
 
 // =========================
@@ -132,11 +166,15 @@ const mainNav =
     document.getElementById("mainNav");
 
 
-menuButton.addEventListener("click", function () {
+if (menuButton && mainNav) {
 
-    mainNav.classList.toggle("mobile-open");
+    menuButton.addEventListener("click", function () {
 
-});
+        mainNav.classList.toggle("mobile-open");
+
+    });
+
+}
 
 
 // =========================
@@ -144,16 +182,64 @@ menuButton.addEventListener("click", function () {
 // WHEN A LINK IS CLICKED
 // =========================
 
-const navLinks =
-    mainNav.querySelectorAll("a");
+if (mainNav) {
+
+    const navLinks =
+        mainNav.querySelectorAll("a");
 
 
-navLinks.forEach(function (link) {
+    navLinks.forEach(function (link) {
 
-    link.addEventListener("click", function () {
+        link.addEventListener("click", function () {
 
-        mainNav.classList.remove("mobile-open");
+            mainNav.classList.remove("mobile-open");
+
+        });
 
     });
 
-});
+}
+
+
+// =========================
+// PROPERTY AUTO-FILL
+// =========================
+
+const urlParams =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const propertyInterest =
+    urlParams.get("property");
+
+
+const propertyNames = {
+
+    luxury:
+        "Modern Luxury Residence",
+
+    family:
+        "Contemporary Family Home",
+
+    villa:
+        "Elegant Hillside Villa"
+
+};
+
+
+const propertyField =
+    document.getElementById("propertyInterest");
+
+
+if (
+    propertyField &&
+    propertyInterest &&
+    propertyNames[propertyInterest]
+) {
+
+    propertyField.value =
+        propertyNames[propertyInterest];
+
+}
