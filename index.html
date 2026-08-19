@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PrimeNest Realty</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <div class="logo">
+            PrimeNest<span> Realty</span>
+        </div>
+
+        <nav id="mainNav">
+            <a href="#home">Home</a>
+            <a href="#properties">Properties</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#properties" class="nav-button">
+            View Properties
+        </a>
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation menu"
+        >
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="hero-tag">
+                FIND YOUR PERFECT HOME
+            </p>
+
+            <h1>
+                Find a place you'll
+                <span>love to call home.</span>
+            </h1>
+
+            <p class="hero-text">
+                Discover beautiful homes and properties in the
+                locations you love. Your next chapter starts here.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#properties" class="primary-button">
+                    Explore Properties
+                </a>
+
+                <a href="#contact" class="secondary-button">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+            <!-- SEARCH -->
+            <div class="search-box">
+
+                <div class="search-item">
+
+                    <div class="search-icon">
+                        📍
+                    </div>
+
+                    <div class="search-field">
+
+                        <label for="location">
+                            Location
+                        </label>
+
+                        <select id="location">
+
+                            <option value="all">
+                                Choose a location
+                            </option>
+
+                            <option value="New York">
+                                New York
+                            </option>
+
+                            <option value="Miami">
+                                Miami
+                            </option>
+
+                            <option value="Los Angeles">
+                                Los Angeles
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="search-divider"></div>
+
+
+                <div class="search-item">
+
+                    <div class="search-icon">
+                        🏠
+                    </div>
+
+                    <div class="search-field">
+
+                        <label for="property-type">
+                            Property Type
+                        </label>
+
+                        <select id="property-type">
+
+                            <option value="all">
+                                Any property type
+                            </option>
+
+                            <option value="House">
+                                House
+                            </option>
+
+                            <option value="Apartment">
+                                Apartment
+                            </option>
+
+                            <option value="Villa">
+                                Villa
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="search-divider"></div>
+
+
+                <div class="search-item">
+
+                    <div class="search-icon">
+                        💰
+                    </div>
+
+                    <div class="search-field">
+
+                        <label for="price">
+                            Price Range
+                        </label>
+
+                        <select id="price">
+
+                            <option value="all">
+                                Any price
+                            </option>
+
+                            <option value="100000">
+                                $100,000+
+                            </option>
+
+                            <option value="250000">
+                                $250,000+
+                            </option>
+
+                            <option value="500000">
+                                $500,000+
+                            </option>
+
+                            <option value="1000000">
+                                $1,000,000+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="search-button"
+                    id="searchButton"
+                >
+                    🔍 Search Properties
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us">
+
+        <div class="section-heading">
+
+            <p>
+                WHY PRIMENEST
+            </p>
+
+            <h2>
+                A better way to find your next home
+            </h2>
+
+            <span>
+                We make the property search simple,
+                transparent, and personal.
+            </span>
+
+        </div>
+
+
+        <div class="features-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🧭
+                </div>
+
+                <h3>
+                    Expert Guidance
+                </h3>
+
+                <p>
+                    Get professional guidance throughout
+                    your property search, from discovery
+                    to closing.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🏡
+                </div>
+
+                <h3>
+                    Quality Properties
+                </h3>
+
+                <p>
+                    Explore carefully selected properties
+                    designed to match different lifestyles
+                    and budgets.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Personal Service
+                </h3>
+
+                <p>
+                    We listen to your needs and help you
+                    find a property that truly feels like
+                    home.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROPERTIES -->
+    <section class="properties" id="properties">
+
+        <div class="section-heading">
+
+            <p>
+                FEATURED PROPERTIES
+            </p>
+
+            <h2>
+                Explore our latest properties
+            </h2>
+
+            <span>
+                Find a home that matches your lifestyle,
+                preferences, and budget.
+            </span>
+
+        </div>
+
+
+        <div
+            class="property-grid"
+            id="propertyGrid"
+        >
+
+
+            <!-- PROPERTY 1 -->
+            <div
+                class="property-card"
+                data-location="New York"
+                data-type="House"
+                data-price="850000"
+            >
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+                        alt="Modern luxury house"
+                    >
+
+                    <span class="property-tag">
+                        For Sale
+                    </span>
+
+                </div>
+
+
+                <div class="property-info">
+
+                    <p class="property-location">
+                        📍 New York, NY
+                    </p>
+
+                    <h3>
+                        Modern Luxury Residence
+                    </h3>
+
+                    <p class="property-price">
+                        $850,000
+                    </p>
+
+                    <div class="property-details">
+
+                        <span>
+                            🛏 4 Beds
+                        </span>
+
+                        <span>
+                            🛁 3 Baths
+                        </span>
+
+                        <span>
+                            📐 2,450 ft²
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#contact"
+                        class="property-button"
+                    >
+                        View Property
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROPERTY 2 -->
+            <div
+                class="property-card"
+                data-location="Miami"
+                data-type="House"
+                data-price="625000"
+            >
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
+                        alt="Luxury modern home"
+                    >
+
+                    <span class="property-tag">
+                        For Sale
+                    </span>
+
+                </div>
+
+
+                <div class="property-info">
+
+                    <p class="property-location">
+                        📍 Miami, FL
+                    </p>
+
+                    <h3>
+                        Contemporary Family Home
+                    </h3>
+
+                    <p class="property-price">
+                        $625,000
+                    </p>
+
+                    <div class="property-details">
+
+                        <span>
+                            🛏 3 Beds
+                        </span>
+
+                        <span>
+                            🛁 2 Baths
+                        </span>
+
+                        <span>
+                            📐 1,980 ft²
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#contact"
+                        class="property-button"
+                    >
+                        View Property
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROPERTY 3 -->
+            <div
+                class="property-card"
+                data-location="Los Angeles"
+                data-type="Villa"
+                data-price="1250000"
+            >
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80"
+                        alt="Elegant luxury villa"
+                    >
+
+                    <span class="property-tag">
+                        For Sale
+                    </span>
+
+                </div>
+
+
+                <div class="property-info">
+
+                    <p class="property-location">
+                        📍 Los Angeles, CA
+                    </p>
+
+                    <h3>
+                        Elegant Hillside Villa
+                    </h3>
+
+                    <p class="property-price">
+                        $1,250,000
+                    </p>
+
+                    <div class="property-details">
+
+                        <span>
+                            🛏 5 Beds
+                        </span>
+
+                        <span>
+                            🛁 4 Baths
+                        </span>
+
+                        <span>
+                            📐 3,200 ft²
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#contact"
+                        class="property-button"
+                    >
+                        View Property
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p
+            id="noResults"
+            class="no-results"
+        >
+            No properties match your search.
+        </p>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section
+        class="about"
+        id="about"
+    >
+
+        <div class="about-container">
+
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80"
+                    alt="Modern real estate interior"
+                >
+
+            </div>
+
+
+            <div class="about-content">
+
+                <p class="about-tag">
+                    ABOUT PRIMENEST
+                </p>
+
+                <h2>
+                    Helping you find more than just a house.
+                </h2>
+
+                <p>
+                    At PrimeNest Realty, we believe finding a home
+                    should be simple, personal, and exciting.
+                    Our team helps buyers discover properties that
+                    truly fit their lifestyle.
+                </p>
+
+                <p>
+                    From your first search to the moment you receive
+                    the keys, we're here to make the entire journey
+                    easier.
+                </p>
+
+                <a
+                    href="#contact"
+                    class="about-button"
+                >
+                    Learn More About Us
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATS -->
+        <div class="stats">
+
+            <div class="stat">
+                <h3>10+</h3>
+                <p>Years Experience</p>
+            </div>
+
+            <div class="stat">
+                <h3>500+</h3>
+                <p>Homes Sold</p>
+            </div>
+
+            <div class="stat">
+                <h3>98%</h3>
+                <p>Happy Clients</p>
+            </div>
+
+            <div class="stat">
+                <h3>15</h3>
+                <p>Local Markets</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section
+        class="contact"
+        id="contact"
+    >
+
+        <div class="contact-container">
+
+
+            <div class="contact-info">
+
+                <p class="contact-tag">
+                    GET IN TOUCH
+                </p>
+
+                <h2>
+                    Let's find your next home.
+                </h2>
+
+                <p class="contact-description">
+                    Have questions about a property or want to
+                    schedule a viewing? Our team is ready to help.
+                </p>
+
+
+                <div class="contact-details">
+
+                    <div class="contact-detail">
+
+                        <span>📍</span>
+
+                        <div>
+
+                            <strong>
+                                Our Office
+                            </strong>
+
+                            <p>
+                                123 Madison Avenue,
+                                New York, NY
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-detail">
+
+                        <span>📞</span>
+
+                        <div>
+
+                            <strong>
+                                Phone
+                            </strong>
+
+                            <p>
+                                +1 (555) 123-4567
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-detail">
+
+                        <span>✉️</span>
+
+                        <div>
+
+                            <strong>
+                                Email
+                            </strong>
+
+                            <p>
+                                hello@primenestrealty.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+            <div class="contact-form-wrapper">
+
+                <form id="contactForm">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Your name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="+1 (555) 000-0000"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            rows="6"
+                            placeholder="Tell us what you're looking for..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="form-button"
+                    >
+                        Send Message
+                    </button>
+
+
+                    <p
+                        id="formMessage"
+                        class="form-message"
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    PrimeNest<span> Realty</span>
+                </div>
+
+                <p>
+                    Helping you find a place you'll
+                    love to call home.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Company
+                </h4>
+
+                <a href="#home">Home</a>
+
+                <a href="#properties">
+                    Properties
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Services
+                </h4>
+
+                <a href="#">
+                    Buy a Home
+                </a>
+
+                <a href="#">
+                    Sell a Property
+                </a>
+
+                <a href="#">
+                    Property Management
+                </a>
+
+                <a href="#">
+                    Consultation
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Contact
+                </h4>
+
+                <a href="#">
+                    hello@primenestrealty.com
+                </a>
+
+                <a href="#">
+                    +1 (555) 123-4567
+                </a>
+
+                <a href="#">
+                    New York, NY
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 PrimeNest Realty.
+                All rights reserved.
+            </p>
+
+            <p>
+                Designed & Developed by
+                <strong>
+                    BS Digital Creative
+                </strong>
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
