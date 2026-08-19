@@ -1,5 +1,5 @@
 PrimeNest Realty
-![PrimeNest Realty Preview](primenest-preview.png)
+[PrimeNest Realty Preview](primenest-preview.png)
 A modern, responsive real estate website designed and developed as a professional portfolio project.
 
 🌐 Live Website
